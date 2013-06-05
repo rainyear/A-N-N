@@ -26,7 +26,7 @@ def calRatios():
 		#print cnts[code]
 		tmps = ""
 		for i in range(len(chars)):
-			rats[code][chars[i]] = (cnts[code][chars[i]] - 1.0) / tots[code]
+			rats[code][chars[i]] = float('%.4f' % ((cnts[code][chars[i]] - 1.0) / tots[code]))
 			#print cnts[code][c]
 			tmps += str(rats[code][chars[i]]) + " "
 		tmps += "> %s\n" % code
