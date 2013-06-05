@@ -33,3 +33,8 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# training dir
+code_recognizer/c
+code_recognizer/py
+code_recognizer/java
