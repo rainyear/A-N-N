@@ -3,6 +3,7 @@ from collections import Counter
 
 codes = ['c', 'py', 'java']
 chars = [')', '(', '_', '.', '=', ';', '"', ',', "'", '*', '/', '{', '}', ':', '-', '0', '+', '1', '[', ']']
+pat   = {'c': "1 0 0", 'py': "0 1 0", 'java': "0 0 1"}
 
 #rats = cnts = {'c':Counter(chars), 'py': Counter(chars), 'java': Counter(chars)}
 #tots = {'c': 0, 'py': 0, 'java': 0}
@@ -31,9 +32,9 @@ def calRatios(code, rats, cnts, tots):
 	tmps = ""
 	for i in range(len(chars)):
 		#print cnts[code][chars[i]]
-		rats[code][chars[i]] = float('%.4f' % ((cnts[code][chars[i]] - 1.0) / tots[code]))
+		rats[code][chars[i]] = '%.2f' % ((cnts[code][chars[i]] - 1.0) / tots[code])
 		tmps += str(rats[code][chars[i]]) + " "
-	tmps += "> %s\n" % code
+	tmps += "> %s\n" % pat[code]
 	#print "Ratios of #FILE<*.%s>:" % code
 	#print rats[code]
 	#print '\n'
